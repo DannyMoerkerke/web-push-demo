@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Web Push Demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <style>
+      body {
+        font-family: Verdana;
+      }
+      main {
+        padding: 20px;
+      }
+
+      .message {
+        display: flex;
+        flex-direction: column;
+        width: 450px;
+        margin-top: 1.5rem;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+      }
+
+      label.checkbox {
+        display: block;
+        margin-bottom: 1rem;
+      }
+
+      #title,
+      #message {
+        padding: 5px;
+        margin-top: 5px;
+      }
+
+      #delay {
+        width: 60px;
+        padding: 5px;
+        margin-top: 5px;
+      }
+
+      button {
+        padding: 5px 10px;
+        font-size: 1rem;
+      }
+
+      p {
+        line-height: 1.5rem;
+      }
+
+      @media screen and (min-width: 1024px) {
+        p {
+          width: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Web Push Demo</h1>
+      <p>
+        Click "Subscribe" or "Unsubscribe" to subscribe to or unsubscribe from push notifications. You need to do this
+        before you can receive push notifications.
+      </p>
+
+      <p>
+        When subscribed you can send a push notification. Enter a delay time in seconds to delay delivery of the notification.
+      </p>
+
+      <p>
+        Enter a long delay time so you have time to close the browser to test if the notification is also delivered when
+        the browser is closed.
+      </p>
+
+      <p>
+        This works in Chrome on ChromeOS, Safari Tech Preview on MacOS Ventura and Chrome on Android.
+      </p>
+
+      <p>
+        Check the "Interaction" box to require the user to interact with the notification.
+      </p>
+      <p>
+        Normally, it will disappear after a few seconds but when this checkbox is checked it will only disappear after
+        the user has interacted with it (either clicked or closed it). Supported only in Chrome.
+      </p>
+
+      <button type="button" id="subscribe">Subscribe</button>
+      <button type="button" id="unsubscribe">Unsubscribe</button>
+
+      <div class="message">
+        <label>
+          Title
+          <input type="text" id="title" value="Web Push Demo">
+        </label>
+
+        <label>
+          Message
+          <textarea id="message" rows="7"></textarea>
+        </label>
+
+        <label>
+          Delay in seconds
+          <input type="number" id="delay" value="0">
+        </label>
+
+        <label class="checkbox">
+          <input type="checkbox" id="interaction">
+          Require interaction
+        </label>
+      </div>
+      <button type="button" id="send" disabled>Send</button>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
