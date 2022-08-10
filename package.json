@@ -15,11 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@bitbucket.org/dannymoerkerke/web-push-demo.git"
+    "url": "git@github.com:DannyMoerkerke/web-push-demo.git"
   },
-  "author": "",
+  "author": "Danny Moerkerke <danny@dannymoerkerke.nl",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/dannymoerkerke/web-push-demo#readme",
+  "homepage": "https://github.com/DannyMoerkerke/web-push-demo",
   "dependencies": {
     "body-parser": "^1.20.0",
     "concurrently": "^7.3.0",
