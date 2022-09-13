@@ -2,8 +2,9 @@ const version = 10;
 
 const notificationClickHandler = (e) => {
   const {action} = e;
-  const url = 'web+coffee://americano';
-
+  // const url = 'web+coffee://americano';
+  const url = 'https://whatpwacando.today';
+  
   console.log('clicked notification, action: ', action);
 
   e.waitUntil(self.clients.matchAll({
