@@ -1,4 +1,4 @@
-const version = 7;
+const version = 9;
 
 const notificationClickHandler = (e) => {
   const {action} = e;
@@ -9,29 +9,21 @@ const notificationClickHandler = (e) => {
   e.waitUntil(self.clients.matchAll({
     type: "window",
     includeUncontrolled: true
-  }).then(function (clientList) {
+  }).then((clientList) => {
     if (url) {
-      let client = null;
+      const client = clientList.find(({url}) => url);
 
-      for (let i = 0; i < clientList.length; i++) {
-        let item = clientList[i];
-
-        if (item.url) {
-          client = item;
-          break;
-        }
-      }
-
-      if (client && 'navigate' in client) {
+      console.log(clientList);
+      if (client) {
         client.focus();
         e.notification.close();
         return client.navigate(url);
       }
-      else {
-        e.notification.close();
-        // if client doesn't have navigate function, try to open a new browser window
-        return clients.openWindow(url);
-      }
+
+      e.notification.close();
+      // if client doesn't have navigate function, try to open a new browser window
+      return self.clients.openWindow(url);
+
     }
   }));
 };
