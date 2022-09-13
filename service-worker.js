@@ -24,11 +24,11 @@ const notificationClickHandler = (e) => {
 
       if (client && 'navigate' in client) {
         client.focus();
-        event.notification.close();
+        e.notification.close();
         return client.navigate(url);
       }
       else {
-        event.notification.close();
+        e.notification.close();
         // if client doesn't have navigate function, try to open a new browser window
         return clients.openWindow(url);
       }
