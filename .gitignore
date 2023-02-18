@@ -4,3 +4,4 @@ ssl/localhost-cert.pem
 ssl/localhost-csr.pem
 ssl/localhost-key.pem
 ssl/private-key.pem
+dist/*
