@@ -1,4 +1,4 @@
-const version = 15;
+const version = 17;
 
 const notificationClickHandler = (e) => {
   const {action} = e;
@@ -67,6 +67,14 @@ const pushHandler = async e => {
   }
 };
 
+const fetchHandler = async e => {
+  e.respondWith(
+    caches.match(e.request, {ignoreSearch: true})
+    .then(response => response || fetch(e.request))
+  )
+};
+
+self.addEventListener('fetch', fetchHandler);
 self.addEventListener('push', pushHandler);
 self.addEventListener('notificationclose', notificationCloseHandler);
 self.addEventListener('notificationclick', notificationClickHandler);
