@@ -8,7 +8,8 @@ if('serviceWorker' in navigator) {
   const sendButton = document.querySelector('#send');
 
   // const apiUrl = 'https://localhost:3000';
-  const apiUrl = 'https://a8x0fuducc.execute-api.us-east-1.amazonaws.com/dev/push';
+  // const apiUrl = 'https://a8x0fuducc.execute-api.us-east-1.amazonaws.com/dev/push';
+  const apiUrl = 'https://ca9akfgcre.execute-api.us-east-1.amazonaws.com';
 
   subscribeButton.addEventListener('click', async () => {
     const response = await (await fetch(`${apiUrl}/public-key`)).json();
